@@ -1,0 +1,10 @@
+{
+  "source": "https://compositecode.github.io/substratalapps.com/openapi.yaml",
+  "sha256": "ae796abe3696c69b907e393ea0e8c4ec54b4b0acf05f4fa7fb24ddd96a52a1da",
+  "info_version": "1.0.0-draft.9",
+  "substratal_versions": [
+    "1"
+  ],
+  "operations": 124,
+  "synced_at": "2026-10-23T15:49:50Z"
+}

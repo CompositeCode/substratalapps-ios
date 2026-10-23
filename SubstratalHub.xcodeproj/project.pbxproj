@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		109F1B316B5DD035AB6D90D0 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502B5D9769C4FF868701CF4 /* AppEnvironment.swift */; };
+		200EA652A8075959AAD15914 /* APIKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4168CF5C871612D8EDD95F /* APIKeysView.swift */; };
+		503AE2D53521F2D6006F4D44 /* SubstratalHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C70AA0B7FC7F9B7BC4D2968 /* SubstratalHubApp.swift */; };
+		5A207B3888279455E91575E4 /* HubSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F922340DA3B64EFB347BC6 /* HubSection.swift */; };
+		5DFABFDAACE507CB11F1A524 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94B5C88575DDF063D085CB /* SignInView.swift */; };
+		5EC391CB7836931649877184 /* AuditLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D551A582DE38E105E8C22693 /* AuditLogView.swift */; };
+		5F46C4F269DF9EC5839C5F65 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BCDBAFC359366C7E1B5A85 /* UsersView.swift */; };
+		60D824064BA2B077E1B35785 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969C9B30A2821D2685A18DA /* HomeView.swift */; };
+		678CDC9870EE54C7D87D6C36 /* SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CDCF393463C90732E9A8F2 /* SmokeTests.swift */; };
+		6C70E92D670B29054F41FE37 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F705AC52E366D154941118 /* RootView.swift */; };
+		78ABE1E1F4C30CA7B3CE608C /* SubstratalCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7B3F472506115D22A2489FDE /* SubstratalCore */; };
+		83D65CA495254F088B3C0614 /* MainShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269BF7A31135F9E08C1111CA /* MainShell.swift */; };
+		A5BDA889699A73335C1CD7C5 /* RolesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA985CEB7E0395D20499E034 /* RolesView.swift */; };
+		A82E15BA69D0E47322BF2003 /* ApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B6FD36443B3A9A64D4E66 /* ApplicationsView.swift */; };
+		B3A107B8F90B7E4A71736839 /* ManageHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94155F13BA21FD62061D99 /* ManageHubView.swift */; };
+		C8B91453FF0D5842748602EF /* SubstratalUI in Frameworks */ = {isa = PBXBuildFile; productRef = BF9C5C4BEC78465574DC90D6 /* SubstratalUI */; };
+		CB721D9181090F11CC272B50 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1CB17CABCAE854FC3AB7E /* InboxView.swift */; };
+		CE631AFA0293D95DF62AFC3F /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA80CE4F9D1AE9E96D451BDB /* ScreenView.swift */; };
+		D7B662CE2F44A8396918ADFB /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F06E1BBE55702E18F182 /* AccountView.swift */; };
+		E531FFBB5831EC2FAC0F9239 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261AC59792431F640B74AB50 /* Navigator.swift */; };
+		F59EABA762C2A88F8202A277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10A2B1788BDDDE391330BBD /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0C0951A0B440EE142329C98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64825BC73D4AE9A1C76EF2DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F83DCBC2D2322BDD4DBA8563;
+			remoteInfo = SubstratalHub;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0661FCCCD8C09C12FAB2768C /* SubstratalHub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SubstratalHub.entitlements; sourceTree = "<group>"; };
+		1D4168CF5C871612D8EDD95F /* APIKeysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeysView.swift; sourceTree = "<group>"; };
+		21F922340DA3B64EFB347BC6 /* HubSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubSection.swift; sourceTree = "<group>"; };
+		25F705AC52E366D154941118 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		261AC59792431F640B74AB50 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		269BF7A31135F9E08C1111CA /* MainShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShell.swift; sourceTree = "<group>"; };
+		2E518929BE203EF72D562BAF /* SubstratalHubUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SubstratalHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3502B5D9769C4FF868701CF4 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		4B94B5C88575DDF063D085CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		4C70AA0B7FC7F9B7BC4D2968 /* SubstratalHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstratalHubApp.swift; sourceTree = "<group>"; };
+		4F94155F13BA21FD62061D99 /* ManageHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageHubView.swift; sourceTree = "<group>"; };
+		5D02F06E1BBE55702E18F182 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		89D1CB17CABCAE854FC3AB7E /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		94CDCF393463C90732E9A8F2 /* SmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeTests.swift; sourceTree = "<group>"; };
+		A5B3E2E5958D5A780561E3FE /* SubstratalKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SubstratalKit; path = Packages/SubstratalKit; sourceTree = SOURCE_ROOT; };
+		AA985CEB7E0395D20499E034 /* RolesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesView.swift; sourceTree = "<group>"; };
+		AC99EBE1A8FD7AD673FDC725 /* SubstratalHub.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SubstratalHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2BCDBAFC359366C7E1B5A85 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		BA80CE4F9D1AE9E96D451BDB /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
+		D551A582DE38E105E8C22693 /* AuditLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditLogView.swift; sourceTree = "<group>"; };
+		D969C9B30A2821D2685A18DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E10A2B1788BDDDE391330BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2142B66ED90DF084E2A7601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EA9B6FD36443B3A9A64D4E66 /* ApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EEBC937AE4DC81C7B691AA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78ABE1E1F4C30CA7B3CE608C /* SubstratalCore in Frameworks */,
+				C8B91453FF0D5842748602EF /* SubstratalUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22465C433CB2EFE8F0033520 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				5D02F06E1BBE55702E18F182 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		2D4BD3A6A1C76CABB6B5E7AD /* Audit */ = {
+			isa = PBXGroup;
+			children = (
+				D551A582DE38E105E8C22693 /* AuditLogView.swift */,
+			);
+			path = Audit;
+			sourceTree = "<group>";
+		};
+		3CB44E5CA4C5EC7C5010436A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D969C9B30A2821D2685A18DA /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		42E6308ACE09516EA2268F1D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				22465C433CB2EFE8F0033520 /* Account */,
+				C0251CD2D08D7490CC205F5D /* Applications */,
+				2D4BD3A6A1C76CABB6B5E7AD /* Audit */,
+				DE0303D15A5C5A456C7C8472 /* Auth */,
+				3CB44E5CA4C5EC7C5010436A /* Home */,
+				786B0DD2E7CA532D5C8C9570 /* Inbox */,
+				DEC97666807B5746AC5C60F0 /* Keys */,
+				FCD54E3ABDB458CB0FD843DC /* Roles */,
+				7B9BDF6AD1A87A816754E963 /* Users */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		4B89118DB19DDA72632140DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC99EBE1A8FD7AD673FDC725 /* SubstratalHub.app */,
+				2E518929BE203EF72D562BAF /* SubstratalHubUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D66643FA51B79F523EF1ECF /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				94CDCF393463C90732E9A8F2 /* SmokeTests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		4DAB903D92F8755549324A47 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A5B3E2E5958D5A780561E3FE /* SubstratalKit */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		4E4EF65A5701673955DA8B09 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E2142B66ED90DF084E2A7601 /* Info.plist */,
+				0661FCCCD8C09C12FAB2768C /* SubstratalHub.entitlements */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		786B0DD2E7CA532D5C8C9570 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				89D1CB17CABCAE854FC3AB7E /* InboxView.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		7B9BDF6AD1A87A816754E963 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				B2BCDBAFC359366C7E1B5A85 /* UsersView.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		C015E0170B1BB6C7825EA6B7 = {
+			isa = PBXGroup;
+			children = (
+				E739A1E3BBCA716D98EA7734 /* App */,
+				4DAB903D92F8755549324A47 /* Packages */,
+				4D66643FA51B79F523EF1ECF /* UITests */,
+				4B89118DB19DDA72632140DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0251CD2D08D7490CC205F5D /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				EA9B6FD36443B3A9A64D4E66 /* ApplicationsView.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		D5C225EF28C3C9EAA2137B34 /* Shell */ = {
+			isa = PBXGroup;
+			children = (
+				21F922340DA3B64EFB347BC6 /* HubSection.swift */,
+				269BF7A31135F9E08C1111CA /* MainShell.swift */,
+				4F94155F13BA21FD62061D99 /* ManageHubView.swift */,
+				261AC59792431F640B74AB50 /* Navigator.swift */,
+				BA80CE4F9D1AE9E96D451BDB /* ScreenView.swift */,
+			);
+			path = Shell;
+			sourceTree = "<group>";
+		};
+		DE0303D15A5C5A456C7C8472 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4B94B5C88575DDF063D085CB /* SignInView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		DEC97666807B5746AC5C60F0 /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				1D4168CF5C871612D8EDD95F /* APIKeysView.swift */,
+			);
+			path = Keys;
+			sourceTree = "<group>";
+		};
+		E739A1E3BBCA716D98EA7734 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				42E6308ACE09516EA2268F1D /* Features */,
+				FDD8A9CC04AA0DA9C064EF70 /* Resources */,
+				D5C225EF28C3C9EAA2137B34 /* Shell */,
+				4E4EF65A5701673955DA8B09 /* Support */,
+				3502B5D9769C4FF868701CF4 /* AppEnvironment.swift */,
+				25F705AC52E366D154941118 /* RootView.swift */,
+				4C70AA0B7FC7F9B7BC4D2968 /* SubstratalHubApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FCD54E3ABDB458CB0FD843DC /* Roles */ = {
+			isa = PBXGroup;
+			children = (
+				AA985CEB7E0395D20499E034 /* RolesView.swift */,
+			);
+			path = Roles;
+			sourceTree = "<group>";
+		};
+		FDD8A9CC04AA0DA9C064EF70 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E10A2B1788BDDDE391330BBD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AE99E1480B79A1EE9B3F8A0 /* SubstratalHubUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F6B6985E6B157A2C33C8DD8 /* Build configuration list for PBXNativeTarget "SubstratalHubUITests" */;
+			buildPhases = (
+				F90CB74E491EA8CEE29A5EC2 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B8F77E3D7A835FE5484D0B0 /* PBXTargetDependency */,
+			);
+			name = SubstratalHubUITests;
+			packageProductDependencies = (
+			);
+			productName = SubstratalHubUITests;
+			productReference = 2E518929BE203EF72D562BAF /* SubstratalHubUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F83DCBC2D2322BDD4DBA8563 /* SubstratalHub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2831D7B240BFBEEC37EA304 /* Build configuration list for PBXNativeTarget "SubstratalHub" */;
+			buildPhases = (
+				EC20FC60D845491A9976D104 /* Sources */,
+				462CCDDC4B2AACFE2A80FB84 /* Resources */,
+				5EEBC937AE4DC81C7B691AA9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SubstratalHub;
+			packageProductDependencies = (
+				7B3F472506115D22A2489FDE /* SubstratalCore */,
+				BF9C5C4BEC78465574DC90D6 /* SubstratalUI */,
+			);
+			productName = SubstratalHub;
+			productReference = AC99EBE1A8FD7AD673FDC725 /* SubstratalHub.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64825BC73D4AE9A1C76EF2DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					0AE99E1480B79A1EE9B3F8A0 = {
+						DevelopmentTeam = BJA9558E4B;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F83DCBC2D2322BDD4DBA8563;
+					};
+					F83DCBC2D2322BDD4DBA8563 = {
+						DevelopmentTeam = BJA9558E4B;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1851440F4B3DFBB19075B1FD /* Build configuration list for PBXProject "SubstratalHub" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C015E0170B1BB6C7825EA6B7;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				48BCBE3645EF4B308E772325 /* XCLocalSwiftPackageReference "Packages/SubstratalKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4B89118DB19DDA72632140DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F83DCBC2D2322BDD4DBA8563 /* SubstratalHub */,
+				0AE99E1480B79A1EE9B3F8A0 /* SubstratalHubUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		462CCDDC4B2AACFE2A80FB84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59EABA762C2A88F8202A277 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC20FC60D845491A9976D104 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				200EA652A8075959AAD15914 /* APIKeysView.swift in Sources */,
+				D7B662CE2F44A8396918ADFB /* AccountView.swift in Sources */,
+				109F1B316B5DD035AB6D90D0 /* AppEnvironment.swift in Sources */,
+				A82E15BA69D0E47322BF2003 /* ApplicationsView.swift in Sources */,
+				5EC391CB7836931649877184 /* AuditLogView.swift in Sources */,
+				60D824064BA2B077E1B35785 /* HomeView.swift in Sources */,
+				5A207B3888279455E91575E4 /* HubSection.swift in Sources */,
+				CB721D9181090F11CC272B50 /* InboxView.swift in Sources */,
+				83D65CA495254F088B3C0614 /* MainShell.swift in Sources */,
+				B3A107B8F90B7E4A71736839 /* ManageHubView.swift in Sources */,
+				E531FFBB5831EC2FAC0F9239 /* Navigator.swift in Sources */,
+				A5BDA889699A73335C1CD7C5 /* RolesView.swift in Sources */,
+				6C70E92D670B29054F41FE37 /* RootView.swift in Sources */,
+				CE631AFA0293D95DF62AFC3F /* ScreenView.swift in Sources */,
+				5DFABFDAACE507CB11F1A524 /* SignInView.swift in Sources */,
+				503AE2D53521F2D6006F4D44 /* SubstratalHubApp.swift in Sources */,
+				5F46C4F269DF9EC5839C5F65 /* UsersView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F90CB74E491EA8CEE29A5EC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				678CDC9870EE54C7D87D6C36 /* SmokeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B8F77E3D7A835FE5484D0B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F83DCBC2D2322BDD4DBA8563 /* SubstratalHub */;
+			targetProxy = A0C0951A0B440EE142329C98 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1CEF4939949C9EA1282F1DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.substratal.hub.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SubstratalHub;
+			};
+			name = Debug;
+		};
+		3358A4EF80A064BC87AAA97F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = App/Support/SubstratalHub.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = App/Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.substratal.hub;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		63E5927F15AA02A05714EA1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BJA9558E4B;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		67269708EF626EBE37AC051E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = App/Support/SubstratalHub.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = App/Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.substratal.hub;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81F9CDC485A51A9087982067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.substratal.hub.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SubstratalHub;
+			};
+			name = Release;
+		};
+		D4E1BB3082AE5DD6C3C1A4B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = BJA9558E4B;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1851440F4B3DFBB19075B1FD /* Build configuration list for PBXProject "SubstratalHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E5927F15AA02A05714EA1D /* Debug */,
+				D4E1BB3082AE5DD6C3C1A4B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5F6B6985E6B157A2C33C8DD8 /* Build configuration list for PBXNativeTarget "SubstratalHubUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CEF4939949C9EA1282F1DDA /* Debug */,
+				81F9CDC485A51A9087982067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2831D7B240BFBEEC37EA304 /* Build configuration list for PBXNativeTarget "SubstratalHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67269708EF626EBE37AC051E /* Debug */,
+				3358A4EF80A064BC87AAA97F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		48BCBE3645EF4B308E772325 /* XCLocalSwiftPackageReference "Packages/SubstratalKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/SubstratalKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B3F472506115D22A2489FDE /* SubstratalCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SubstratalCore;
+		};
+		BF9C5C4BEC78465574DC90D6 /* SubstratalUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SubstratalUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 64825BC73D4AE9A1C76EF2DA /* Project object */;
+}

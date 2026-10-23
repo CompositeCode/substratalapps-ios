@@ -1,0 +1,325 @@
+<title>Substratal iOS Themes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+/* Layout: one reading column of intro, then two rows of three phone specimens (light, dark), then a pick bar that previews the chosen pair. */
+:root {
+  --bg: #f2f3f0;
+  --panel: #ffffff;
+  --ink: #1c2024;
+  --ink-2: #5b6168;
+  --rule: #d7dad2;
+  --accent: #2e6f62;
+  --accent-soft: #e2eeea;
+  --on-accent: #ffffff;
+  --display: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --body: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111412; --panel: #1b1f1c; --ink: #e6e9e4; --ink-2: #9aa39c;
+    --rule: #2e3430; --accent: #5db8a2; --accent-soft: #1d2d28; --on-accent: #111412;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111412; --panel: #1b1f1c; --ink: #e6e9e4; --ink-2: #9aa39c;
+  --rule: #2e3430; --accent: #5db8a2; --accent-soft: #1d2d28; --on-accent: #111412;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 17px; line-height: 1.6;
+  padding: 0 20px;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 48px 160px; display: grid; gap: 56px; }
+
+header { display: grid; gap: 14px; max-width: 68ch; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.015em; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 24px; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.lede { font-size: 19px; color: var(--ink-2); }
+code { font-family: var(--mono); font-size: .86em; background: var(--accent-soft); padding: .1em .35em; border-radius: 4px; }
+
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 32px; border-top: 1px solid var(--rule); padding-top: 20px; }
+.rules div { display: grid; gap: 4px; min-width: 0; }
+.rules b { font-family: var(--display); font-weight: 600; font-size: 15px; }
+.rules span { font-size: 15px; color: var(--ink-2); }
+
+section.set { display: grid; gap: 24px; }
+.set-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; border-top: 1px solid var(--rule); padding-top: 18px; }
+.set-head p { color: var(--ink-2); font-size: 15px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+
+.option { display: grid; gap: 16px; align-content: start; }
+.option label.pick {
+  display: grid; gap: 16px; cursor: pointer; padding: 18px; border-radius: 22px;
+  border: 1.5px solid transparent; transition: border-color .15s, background .15s;
+}
+.option label.pick:hover { background: var(--panel); }
+.option input { position: absolute; opacity: 0; pointer-events: none; }
+.option input:checked + label.pick { border-color: var(--accent); background: var(--panel); }
+.option input:focus-visible + label.pick { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.meta { display: grid; gap: 8px; }
+.meta-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.meta h3 { font-family: var(--display); font-weight: 600; font-size: 19px; margin: 0; }
+.radio { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--rule); flex: none; display: grid; place-items: center; }
+.option input:checked + label .radio { border-color: var(--accent); background: var(--accent); }
+.option input:checked + label .radio::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--on-accent); }
+.meta p { font-size: 15px; color: var(--ink-2); }
+.swatches { display: flex; flex-wrap: wrap; gap: 6px; }
+.sw { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; color: var(--ink-2); padding: 3px 8px 3px 3px; border: 1px solid var(--rule); border-radius: 99px; }
+.sw i { width: 14px; height: 14px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(127,127,127,.35); }
+.contrast { font-family: var(--mono); font-size: 11.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.contrast b { color: var(--ink); font-weight: 500; }
+
+/* ---------- Phone specimen ---------- */
+.phone-slot { display: flex; justify-content: center; }
+.phone {
+  width: 100%; max-width: 280px; aspect-ratio: 9 / 19.5;
+  border-radius: 44px; padding: 10px; background: #0b0c0d;
+  box-shadow: 0 0 0 1.5px #3a3d40, 0 18px 40px -18px rgba(0,0,0,.45);
+}
+.screen {
+  height: 100%; border-radius: 35px; overflow: hidden; position: relative;
+  background: var(--p-bg); color: var(--p-text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  font-size: 11px; line-height: 1.3; display: flex; flex-direction: column;
+}
+.status { display: flex; justify-content: space-between; align-items: center; padding: 12px 22px 0; font-weight: 600; font-size: 11.5px; height: 34px; }
+.island { position: absolute; top: 9px; left: 50%; width: 76px; height: 22px; border-radius: 12px; background: #000; transform: translateX(-50%); }
+.status .sig { display: flex; gap: 4px; align-items: center; }
+.status .sig span { display: block; background: var(--p-text); border-radius: 2px; }
+.nav { display: flex; justify-content: space-between; align-items: flex-end; padding: 10px 16px 8px; }
+.nav h4 { margin: 0; font-size: 25px; font-weight: 700; letter-spacing: -0.02em; }
+.avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--p-accent-soft); color: var(--p-accent); display: grid; place-items: center; font-weight: 600; font-size: 11px; }
+.body { flex: 1; overflow: hidden; padding: 0 14px; display: flex; flex-direction: column; gap: 10px; }
+.plan { background: var(--p-surface); border-radius: 12px; padding: 10px 12px; display: grid; gap: 2px; }
+.plan-row { display: flex; justify-content: space-between; align-items: center; }
+.plan strong { font-size: 12.5px; }
+.plan small { color: var(--p-text2); font-size: 10.5px; }
+.chip { font-size: 9.5px; font-weight: 600; padding: 2px 7px; border-radius: 99px; background: var(--p-accent-soft); color: var(--p-accent); }
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--p-fill); border-radius: 8px; padding: 2px; font-size: 10.5px; font-weight: 500; text-align: center; }
+.seg span { padding: 4px 0; border-radius: 6px; color: var(--p-text); }
+.seg span.on { background: var(--p-seg-on); box-shadow: 0 1px 2px rgba(0,0,0,.12); font-weight: 600; }
+.sec { font-size: 9.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--p-text2); padding: 2px 4px 0; }
+.list { background: var(--p-surface); border-radius: 12px; overflow: hidden; }
+.row { display: flex; align-items: center; gap: 9px; padding: 8px 10px; position: relative; }
+.row + .row::before { content: ""; position: absolute; top: 0; left: 46px; right: 0; height: 1px; background: var(--p-sep); }
+.ico { width: 28px; height: 28px; border-radius: 7px; display: grid; place-items: center; font-weight: 700; font-size: 12px; flex: none; }
+.ico.a { background: var(--p-accent); color: var(--p-on-accent); }
+.ico.b { background: var(--p-accent-soft); color: var(--p-accent); }
+.ico.c { background: var(--p-fill); color: var(--p-text2); }
+.rtext { flex: 1; min-width: 0; display: grid; gap: 1px; }
+.rtext b { font-weight: 600; font-size: 11.5px; }
+.rtext small { color: var(--p-text2); font-size: 9.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pill { font-size: 9px; font-weight: 600; padding: 2px 6px; border-radius: 99px; flex: none; }
+.pill.ok { color: var(--p-ok); background: var(--p-ok-soft); }
+.pill.warn { color: var(--p-warn); background: var(--p-warn-soft); }
+.pill.off { color: var(--p-text2); background: var(--p-fill); }
+.chev { color: var(--p-text3); font-size: 13px; flex: none; }
+.btn { background: var(--p-accent); color: var(--p-on-accent); border-radius: 10px; text-align: center; font-weight: 600; font-size: 12px; padding: 9px 0; }
+.link { color: var(--p-accent); text-align: center; font-size: 11px; font-weight: 500; }
+.tabbar { display: grid; grid-template-columns: repeat(4, 1fr); padding: 7px 6px 16px; background: var(--p-bar); border-top: 1px solid var(--p-sep); }
+.tab { display: grid; justify-items: center; gap: 2px; font-size: 8.5px; font-weight: 500; color: var(--p-text3); }
+.tab.on { color: var(--p-accent); }
+.tab svg { width: 19px; height: 19px; }
+
+/* Theme palettes. These are fixed specimens, so they intentionally ignore the page theme. */
+.t-bedrock  { --p-bg:#F2F3F0; --p-surface:#FFFFFF; --p-fill:#E6E8E2; --p-seg-on:#FFFFFF; --p-bar:rgba(246,247,244,.94); --p-text:#1C2024; --p-text2:#5B6168; --p-text3:#8A9088; --p-sep:#DDE0D8; --p-accent:#2E6F62; --p-accent-soft:#DDEBE6; --p-on-accent:#FFFFFF; --p-ok:#2C6E3A; --p-ok-soft:#DFF0E2; --p-warn:#7F5300; --p-warn-soft:#F5E9CC; }
+.t-quartz   { --p-bg:#F6F7F9; --p-surface:#FFFFFF; --p-fill:#EAECEF; --p-seg-on:#FFFFFF; --p-bar:rgba(250,251,252,.94); --p-text:#111418; --p-text2:#5E6672; --p-text3:#8D949E; --p-sep:#E1E4E8; --p-accent:#1D6A87; --p-accent-soft:#DCEBF2; --p-on-accent:#FFFFFF; --p-ok:#22713A; --p-ok-soft:#DDF1E3; --p-warn:#865400; --p-warn-soft:#F8EBCF; }
+.t-lichen   { --p-bg:#EDF0E8; --p-surface:#FAFBF6; --p-fill:#E1E5DA; --p-seg-on:#FAFBF6; --p-bar:rgba(242,244,237,.94); --p-text:#1D2219; --p-text2:#5C6455; --p-text3:#8A9282; --p-sep:#DADFD1; --p-accent:#4A6A2C; --p-accent-soft:#E2EAD5; --p-on-accent:#FFFFFF; --p-ok:#2E6B35; --p-ok-soft:#DDEDDC; --p-warn:#7C5200; --p-warn-soft:#F2E6C9; }
+.t-strata   { --p-bg:#111412; --p-surface:#1B1F1C; --p-fill:#262B27; --p-seg-on:#3A403B; --p-bar:rgba(22,26,23,.94); --p-text:#E6E9E4; --p-text2:#9AA39C; --p-text3:#6E776F; --p-sep:#2A302B; --p-accent:#5DB8A2; --p-accent-soft:#1D332D; --p-on-accent:#0D1210; --p-ok:#7BCB8C; --p-ok-soft:#1C3322; --p-warn:#E5B862; --p-warn-soft:#3A2F17; }
+.t-obsidian { --p-bg:#000000; --p-surface:#121315; --p-fill:#1F2023; --p-seg-on:#3A3B3F; --p-bar:rgba(10,10,11,.94); --p-text:#F2F3F5; --p-text2:#8E9299; --p-text3:#5F636A; --p-sep:#232428; --p-accent:#62C6B2; --p-accent-soft:#11302A; --p-on-accent:#00110D; --p-ok:#76D38A; --p-ok-soft:#10301A; --p-warn:#F0C062; --p-warn-soft:#352A10; }
+.t-basalt   { --p-bg:#141920; --p-surface:#1D232C; --p-fill:#28303B; --p-seg-on:#3B4553; --p-bar:rgba(24,30,38,.94); --p-text:#E3E7ED; --p-text2:#95A1AF; --p-text3:#687483; --p-sep:#2B3440; --p-accent:#D9956A; --p-accent-soft:#3A2B22; --p-on-accent:#1A1009; --p-ok:#79C99A; --p-ok-soft:#1B3328; --p-warn:#E8BE6A; --p-warn-soft:#3A3019; }
+
+/* ---------- Pick bar ---------- */
+.pickbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom, 0px));
+  background: var(--panel); border-top: 1px solid var(--rule);
+}
+.pickbar-in { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; }
+.choice { font-family: var(--display); font-size: 15px; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.choice span { color: var(--ink-2); }
+.choice b { color: var(--ink); font-weight: 600; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+button {
+  font-family: var(--display); font-size: 14px; font-weight: 600; cursor: pointer;
+  padding: 9px 16px; border-radius: 10px; border: 1px solid var(--rule); background: var(--bg); color: var(--ink);
+}
+button.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.pair { display: grid; gap: 20px; }
+.pair-phones { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; justify-items: center; }
+.pair-phones figure { margin: 0; display: grid; gap: 10px; justify-items: center; width: 100%; }
+.pair-phones figcaption { font-family: var(--mono); font-size: 12px; color: var(--ink-2); }
+.note { font-size: 15px; color: var(--ink-2); max-width: 68ch; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Substratal Apps · iOS client · Theme selection</div>
+    <h1>Pick one light theme and one dark theme</h1>
+    <p class="lede">Six candidates for the iOS app, each shown on the same screen: the Apps tab, where a person sees which apps are switched on for them and why. Choose one from each row. The app follows the system setting by default, and people can override it in Account → Appearance, which writes the reserved <code>theme</code> key in their global Settings.</p>
+    <div class="rules">
+      <div><b>Same screen everywhere</b><span>Only color changes between specimens, so you're comparing palettes and nothing else.</span></div>
+      <div><b>Accessible by default</b><span>Body text and accent pass WCAG AA (4.5:1) on every surface. Ratios are listed under each option.</span></div>
+      <div><b>Native type</b><span>The app uses SF Pro and Dynamic Type. IBM Plex stays on the docs site.</span></div>
+    </div>
+  </header>
+
+  <section class="set" aria-labelledby="h-light">
+    <div class="set-head"><h2 id="h-light">Light</h2><p>Grouped-list background, white cards, one accent.</p></div>
+    <div class="grid" id="light"></div>
+  </section>
+
+  <section class="set" aria-labelledby="h-dark">
+    <div class="set-head"><h2 id="h-dark">Dark</h2><p>Accent lifted for dark surfaces. Filled buttons use dark text.</p></div>
+    <div class="grid" id="dark"></div>
+  </section>
+
+  <section class="pair" aria-labelledby="h-pair">
+    <div class="set-head"><h2 id="h-pair">Your pair</h2><p>How the two choices sit together when the system flips.</p></div>
+    <div class="pair-phones" id="pair"></div>
+    <p class="note">App names, the organization and the trial dates on these screens are sample data. When you've chosen, copy the result and paste it back into the conversation. I'll consolidate on those two and write the full iOS spec around them.</p>
+  </section>
+</div>
+
+<div class="pickbar" role="region" aria-label="Your selection">
+  <div class="pickbar-in">
+    <div class="choice" id="choice"></div>
+    <div class="actions">
+      <button type="button" id="copy" class="primary">Copy my choice</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const THEMES = {
+  light: [
+    { id: "bedrock", name: "Bedrock", desc: "The docs site's own palette carried over: cool stone neutrals with the verdigris accent. The most direct link to the Substratal brand.",
+      sw: [["bg","#F2F3F0"],["text","#1C2024"],["accent","#2E6F62"]], cr: { text: "14.7", sec: "6.3", accent: "5.9" } },
+    { id: "quartz", name: "Quartz", desc: "Crisp, near-white and close to stock iOS. A deep petrol accent keeps it from reading as default system blue.",
+      sw: [["bg","#F6F7F9"],["text","#111418"],["accent","#1D6A87"]], cr: { text: "17.2", sec: "5.8", accent: "6.1" } },
+    { id: "lichen", name: "Lichen", desc: "Pale green-grey ground with a moss accent. Softer and more organic, and the most distinctive of the three.",
+      sw: [["bg","#EDF0E8"],["text","#1D2219"],["accent","#4A6A2C"]], cr: { text: "14.1", sec: "5.9", accent: "6.0" } },
+  ],
+  dark: [
+    { id: "strata", name: "Deep Strata", desc: "Bedrock's dark counterpart. Green-black stone with verdigris lifted to stay readable. Calm and on-brand.",
+      sw: [["bg","#111412"],["text","#E6E9E4"],["accent","#5DB8A2"]], cr: { text: "15.1", sec: "6.4", accent: "7.0" } },
+    { id: "obsidian", name: "Obsidian", desc: "True black for OLED screens, with neutral greys and a soft verdigris. The most battery-friendly, and close to native iOS dark.",
+      sw: [["bg","#000000"],["text","#F2F3F5"],["accent","#62C6B2"]], cr: { text: "18.9", sec: "6.0", accent: "9.1" } },
+    { id: "basalt", name: "Basalt", desc: "Blue-slate surfaces with a copper accent. Warmer highlights against a cool base. Pairs well with Quartz.",
+      sw: [["bg","#141920"],["text","#E3E7ED"],["accent","#D9956A"]], cr: { text: "14.2", sec: "6.0", accent: "6.4" } },
+  ],
+};
+
+const icon = {
+  apps: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>',
+  orgs: '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="8" cy="8" r="3.2"/><circle cx="16.5" cy="9" r="2.6"/><path d="M2 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5v1H2z"/><path d="M15 20v-1c0-1.7-.6-3.2-1.6-4.3.9-.5 1.9-.7 3-.7 2.9 0 5.6 1.9 5.6 4.8V20z"/></svg>',
+  activity: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>',
+  account: '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>',
+};
+
+function phone(id) {
+  return `
+  <div class="phone" aria-hidden="true"><div class="screen t-${id}">
+    <div class="island"></div>
+    <div class="status"><span>9:41</span><span class="sig"><span style="width:3px;height:5px"></span><span style="width:3px;height:7px"></span><span style="width:3px;height:9px"></span><span style="width:18px;height:9px;border-radius:3px"></span></span></div>
+    <div class="nav"><h4>Apps</h4><div class="avatar">JR</div></div>
+    <div class="body">
+      <div class="plan">
+        <div class="plan-row"><strong>Standard</strong><span class="chip">Covered</span></div>
+        <small>Paid by Northwind Labs · renews Nov 14</small>
+      </div>
+      <div class="seg"><span class="on">All</span><span>On</span><span>Off</span></div>
+      <div class="sec">Your apps</div>
+      <div class="list">
+        <div class="row"><div class="ico a">L</div><div class="rtext"><b>Ledgerline</b><small>Via Northwind Labs · Editor</small></div><span class="pill ok">On</span><span class="chev">›</span></div>
+        <div class="row"><div class="ico b">F</div><div class="rtext"><b>Fieldnote</b><small>Trial ends Oct 26</small></div><span class="pill warn">Trial</span><span class="chev">›</span></div>
+        <div class="row"><div class="ico a">T</div><div class="rtext"><b>Tallyboard</b><small>Personal · Owner</small></div><span class="pill ok">On</span><span class="chev">›</span></div>
+        <div class="row"><div class="ico c">S</div><div class="rtext"><b>Signpost</b><small>Turned off by an admin</small></div><span class="pill off">Off</span><span class="chev">›</span></div>
+      </div>
+      <div class="btn">Browse all apps</div>
+      <div class="link">Why can't I open an app?</div>
+    </div>
+    <div class="tabbar">
+      <div class="tab on">${icon.apps}Apps</div>
+      <div class="tab">${icon.orgs}Organizations</div>
+      <div class="tab">${icon.activity}Activity</div>
+      <div class="tab">${icon.account}Account</div>
+    </div>
+  </div></div>`;
+}
+
+function option(group, t, checked) {
+  const inputId = `pick-${t.id}`;
+  return `
+  <div class="option">
+    <input type="radio" name="${group}" id="${inputId}" value="${t.id}" ${checked ? "checked" : ""}>
+    <label class="pick" for="${inputId}">
+      <div class="phone-slot">${phone(t.id)}</div>
+      <div class="meta">
+        <div class="meta-top"><h3>${t.name}</h3><span class="radio"></span></div>
+        <p>${t.desc}</p>
+        <div class="swatches">${t.sw.map(([k, v]) => `<span class="sw"><i style="background:${v}"></i>${k} ${v}</span>`).join("")}</div>
+        <div class="contrast"><span>text <b>${t.cr.text}:1</b></span><span>secondary <b>${t.cr.sec}:1</b></span><span>accent <b>${t.cr.accent}:1</b></span></div>
+      </div>
+    </label>
+  </div>`;
+}
+
+const saved = (() => { try { return JSON.parse(localStorage.getItem("theme-pick") || "{}"); } catch { return {}; } })();
+const pick = { light: saved.light || "bedrock", dark: saved.dark || "strata" };
+
+for (const group of ["light", "dark"]) {
+  document.getElementById(group).innerHTML = THEMES[group].map(t => option(group, t, t.id === pick[group])).join("");
+}
+
+const nameOf = (group, id) => THEMES[group].find(t => t.id === id).name;
+const summary = () => `iOS themes: Light = ${nameOf("light", pick.light)}, Dark = ${nameOf("dark", pick.dark)}`;
+
+function render() {
+  document.getElementById("choice").innerHTML =
+    `<span>Light <b>${nameOf("light", pick.light)}</b></span><span>Dark <b>${nameOf("dark", pick.dark)}</b></span>`;
+  document.getElementById("pair").innerHTML =
+    `<figure>${phone(pick.light)}<figcaption>Light · ${nameOf("light", pick.light)}</figcaption></figure>` +
+    `<figure>${phone(pick.dark)}<figcaption>Dark · ${nameOf("dark", pick.dark)}</figcaption></figure>`;
+}
+render();
+
+document.addEventListener("change", e => {
+  if (e.target.name === "light" || e.target.name === "dark") {
+    pick[e.target.name] = e.target.value;
+    try { localStorage.setItem("theme-pick", JSON.stringify(pick)); } catch {}
+    render();
+  }
+});
+
+const copyBtn = document.getElementById("copy");
+copyBtn.addEventListener("click", () => {
+  const text = summary();
+  const done = () => { copyBtn.textContent = "Copied"; setTimeout(() => copyBtn.textContent = "Copy my choice", 1600); };
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallback(text, done));
+  } else fallback(text, done);
+});
+function fallback(text, done) {
+  const el = document.getElementById("choice");
+  el.textContent = text;
+  const r = document.createRange(); r.selectNodeContents(el);
+  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  copyBtn.textContent = "Selected. Press Copy";
+  setTimeout(() => { copyBtn.textContent = "Copy my choice"; render(); }, 2400);
+}
+</script>

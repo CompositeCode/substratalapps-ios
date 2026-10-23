@@ -1,0 +1,91 @@
+# Source of truth for SubstratalHub.xcodeproj. Regenerate with `xcodegen generate` (or `make project`) after
+# editing this file; the generated project is committed so the repo opens in Xcode without extra tools.
+name: SubstratalHub
+options:
+  bundleIdPrefix: com.substratal
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "27.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    DEVELOPMENT_TEAM: BJA9558E4B
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    DEAD_CODE_STRIPPING: YES
+packages:
+  SubstratalKit:
+    path: Packages/SubstratalKit
+targets:
+  SubstratalHub:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+    dependencies:
+      - package: SubstratalKit
+        product: SubstratalCore
+      - package: SubstratalKit
+        product: SubstratalUI
+    info:
+      path: App/Support/Info.plist
+      properties:
+        CFBundleDisplayName: Substratal
+        LSApplicationCategoryType: public.app-category.productivity
+        UILaunchScreen:
+          UIImageName: Brand/BrandMark
+          UIColorName: Brand/IconBackground
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        CFBundleURLTypes:
+          - CFBundleURLName: com.substratal.hub
+            CFBundleURLSchemes: [substratal]
+        NSFaceIDUsageDescription: Substratal uses Face ID to unlock administration and to confirm sensitive changes.
+        ITSAppUsesNonExemptEncryption: false
+    entitlements:
+      path: App/Support/SubstratalHub.entitlements
+      properties:
+        com.apple.developer.associated-domains:
+          - applinks:dashboard.substratalapps.com
+          - webcredentials:dashboard.substratalapps.com
+        aps-environment: development
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.substratal.hub
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        SUPPORTS_MACCATALYST: NO
+  SubstratalHubUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: UITests
+    dependencies:
+      - target: SubstratalHub
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.substratal.hub.uitests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  SubstratalHub:
+    build:
+      targets:
+        SubstratalHub: all
+        SubstratalHubUITests: [test]
+    run:
+      config: Debug
+      commandLineArguments:
+        "-demo": false
+    test:
+      config: Debug
+      targets:
+        - SubstratalHubUITests
+        - package: SubstratalKit/SubstratalCoreTests

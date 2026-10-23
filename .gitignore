@@ -1,0 +1,20 @@
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+SubstratalHub.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/configuration/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/SubstratalKit/.swiftpm/
+
+# Tools
+.xcodebuildmcp/
+*.xcresult
+
+# macOS
+.DS_Store

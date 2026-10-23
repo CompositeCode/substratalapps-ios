@@ -1,0 +1,6 @@
+# Generated from the derived openapi.yaml next to this file (see scripts/sync-openapi.sh). Never edit generated code.
+generate:
+  - types
+  - client
+accessModifier: public
+namingStrategy: idiomatic

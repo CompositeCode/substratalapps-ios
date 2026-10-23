@@ -1,0 +1,39 @@
+name: iOS
+
+# Builds and tests on every push and pull request. Also checks that the generated Xcode project matches
+# project.yml, so nobody hand-edits project.pbxproj.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_27.0.app || xcodebuild -version
+
+      - name: Project matches project.yml
+        run: |
+          brew install xcodegen
+          xcodegen generate --quiet
+          git diff --exit-code -- SubstratalHub.xcodeproj
+
+      - name: SubstratalKit unit tests
+        working-directory: Packages/SubstratalKit
+        run: swift test
+
+      - name: Build and UI smoke test
+        run: |
+          xcodebuild -project SubstratalHub.xcodeproj -scheme SubstratalHub -skipPackagePluginValidation \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+            test -only-testing:SubstratalHubUITests

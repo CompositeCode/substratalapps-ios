@@ -1,0 +1,45 @@
+name: API contract sync
+
+# Keeps the vendored API contract and the screen registry current, so the app's generated client, its routes
+# and the help center all describe the same API. Opens a pull request when either one changed upstream.
+on:
+  schedule:
+    - cron: "37 6 * * *"
+  repository_dispatch:
+    types: [api-contract-updated, specs-updated]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Fetch the latest published openapi.yaml
+        run: scripts/sync-openapi.sh
+
+      - name: Regenerate the screen registry from the specs
+        run: |
+          git clone --depth 1 https://github.com/CompositeCode/substratalapps-applications-specs.git "$RUNNER_TEMP/specs"
+          scripts/generate-screen-ids.py "$RUNNER_TEMP/specs/substratal-application-specs"
+
+      - name: Open a pull request if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- api-contract Packages/SubstratalKit/Sources; then
+            echo "Contract and screens are current."; exit 0
+          fi
+          branch="chore/contract-sync-$(date -u +%Y%m%d)"
+          version=$(python3 -c "import json;print(json.load(open('api-contract/CONTRACT.json'))['info_version'])")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add api-contract Packages/SubstratalKit/Sources
+          git commit -m "Sync API contract ($version) and screen registry"
+          git push --force-with-lease origin "$branch"
+          gh pr create --fill --base main --head "$branch" || gh pr edit "$branch" --body "Updated by the API contract sync workflow."

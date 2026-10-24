@@ -27,7 +27,7 @@ The app talks to production (`https://api.substratalapps.com`) by default. To ex
 
 ```bash
 make build
-xcrun simctl launch booted com.substratal.hub -demo YES -autoSignIn YES -route /admin/users
+xcrun simctl launch booted com.substratalapps.hub -demo YES -autoSignIn YES -route /admin/users
 ```
 
 `-autoSignIn YES` skips sign-in, and `-route <path>` opens any Hub route as if it were a deep link. Both work in demo

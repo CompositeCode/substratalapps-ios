@@ -26,7 +26,7 @@ screens:          ## Regenerate ScreenID.swift from the specs (sibling checkout 
 	scripts/generate-screen-ids.py $(SPECS)
 
 run-demo:         ## Launch in the booted simulator with demo data, signed in
-	xcrun simctl launch booted com.substratal.hub -demo YES -autoSignIn YES
+	xcrun simctl launch booted com.substratalapps.hub -demo YES -autoSignIn YES
 
 check:            ## Fail if the project, contract or screen registry is out of date
 	xcodegen generate --quiet && git diff --exit-code -- SubstratalHub.xcodeproj

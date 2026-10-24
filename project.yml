@@ -45,7 +45,7 @@ targets:
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
         UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
         CFBundleURLTypes:
-          - CFBundleURLName: com.substratal.hub
+          - CFBundleURLName: com.substratalapps.hub
             CFBundleURLSchemes: [substratal]
         NSFaceIDUsageDescription: Substratal uses Face ID to unlock administration and to confirm sensitive changes.
         ITSAppUsesNonExemptEncryption: false
@@ -58,7 +58,7 @@ targets:
         aps-environment: development
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.substratal.hub
+        PRODUCT_BUNDLE_IDENTIFIER: com.substratalapps.hub
         TARGETED_DEVICE_FAMILY: "1,2"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
@@ -72,7 +72,7 @@ targets:
       - target: SubstratalHub
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.substratal.hub.uitests
+        PRODUCT_BUNDLE_IDENTIFIER: com.substratalapps.hub.uitests
         GENERATE_INFOPLIST_FILE: YES
 schemes:
   SubstratalHub:

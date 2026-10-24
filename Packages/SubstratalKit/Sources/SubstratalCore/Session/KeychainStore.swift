@@ -6,7 +6,7 @@ import Security
 public struct KeychainStore: Sendable {
     let service: String
 
-    public init(service: String = "com.substratal.hub.session") { self.service = service }
+    public init(service: String = "com.substratalapps.hub.session") { self.service = service }
 
     public func read(_ account: String) -> String? {
         var query = baseQuery(account)

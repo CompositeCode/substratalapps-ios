@@ -3,8 +3,8 @@
 The native iOS/iPadOS client of the [Substratal Apps Platform API](https://compositecode.github.io/substratalapps.com/):
 the management app for the platform (users, access, roles, applications, API keys, webhooks, audit), and in time the
 full Substratal Hub for every user. It's built from the shared
-[Hub specifications](https://compositecode.github.io/substratalapps-applications-specs/) and links to the shared
-[help center](https://compositecode.github.io/substratalapps-applications-specs/help/).
+[Hub specifications](https://specs.substratalapps.com/) and links to the shared
+[help center](https://specs.substratalapps.com/help/).
 
 - **Plan:** [docs/management-app-plan.md](docs/management-app-plan.md)
 - **API gaps:** [docs/api-gaps.md](docs/api-gaps.md), which maps to the API repo's `[api-gaps]` issues
@@ -50,7 +50,7 @@ Substratal-Version: 1
   Account → About.
 - A unit test fails if the pinned header value isn't one the vendored contract declares.
 
-See the help center's [API versioning](https://compositecode.github.io/substratalapps-applications-specs/help/developers/api-versioning.html) page.
+See the help center's [API versioning](https://specs.substratalapps.com/help/developers/api-versioning.html) page.
 
 ## Layout
 

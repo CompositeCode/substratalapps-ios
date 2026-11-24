@@ -24,8 +24,8 @@ jobs:
 
       - name: Regenerate the screen registry from the specs
         run: |
-          git clone --depth 1 https://github.com/CompositeCode/substratalapps-applications-specs.git "$RUNNER_TEMP/specs"
-          scripts/generate-screen-ids.py "$RUNNER_TEMP/specs/substratal-application-specs"
+          # The published spec: the specs repository is private, so it can't be cloned here.
+          scripts/generate-screen-ids.py https://specs.substratalapps.com/spec/
 
       - name: Open a pull request if anything changed
         env:

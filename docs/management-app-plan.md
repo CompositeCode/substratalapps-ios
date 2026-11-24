@@ -5,18 +5,18 @@ Plan for the first client of the Substratal Apps Platform API: a native iOS/iPad
 Sources reviewed on 2026-10-21:
 
 - API spec site and repo: [compositecode.github.io/substratalapps.com](https://compositecode.github.io/substratalapps.com/), `CompositeCode/substratalapps.com` at `967e114` (2026-10-20). Covers `openapi.yaml` 3.1, 118 operations, the Go implementation, Terraform, `plan-remaining.md` and `remaining_manual_steps.md`.
-- Client specs: [compositecode.github.io/substratalapps-applications-specs](https://compositecode.github.io/substratalapps-applications-specs/), `CompositeCode/substratalapps-applications-specs` at `e296d7e` (2026-10-18). Covers the shared spec, the iOS handoff, the 75-screen inventory and the themes.
+- Client specs: [specs.substratalapps.com](https://specs.substratalapps.com/), `CompositeCode/substratalapps-applications-specs` at `e296d7e` (2026-10-18). Covers the shared spec, the iOS handoff, the 75-screen inventory and the themes.
 - Live probes (2026-10-21, when paths still carried `/v1`): `GET /health` returned `200`, `GET /applications` without a token returned `401` with the documented error envelope, and `/.well-known/jwks.json` serves an RS256 key. `dashboard.substratalapps.com` and `auth.substratalapps.com` don't resolve in DNS.
 
 The companion document [api-gaps.md](api-gaps.md) lists what the API is missing.
 
 > **Update, 2026-10-23.** Superseded where this conflicts:
 >
-> - **API versioning moved from the URL to a header.** Every path is at the host root (`https://api.substratalapps.com/users`, not `/v1/users`), and every request sends `Substratal-Version: 1`. `/v1/…` returns `404`. Missing the header returns `400 api_version_required`. `Deprecation`/`Sunset` response headers announce retirement, and `400 unsupported_api_version` follows it. The app implements this in `APIVersionMiddleware` and the GLB-03 Update available / Update required states. See the [help center's versioning page](https://compositecode.github.io/substratalapps-applications-specs/help/developers/api-versioning.html).
+> - **API versioning moved from the URL to a header.** Every path is at the host root (`https://api.substratalapps.com/users`, not `/v1/users`), and every request sends `Substratal-Version: 1`. `/v1/…` returns `404`. Missing the header returns `400 api_version_required`. `Deprecation`/`Sunset` response headers announce retirement, and `400 unsupported_api_version` follows it. The app implements this in `APIVersionMiddleware` and the GLB-03 Update available / Update required states. See the [help center's versioning page](https://specs.substratalapps.com/help/developers/api-versioning.html).
 > - **The API is now `1.0.0-draft.9`, with 124 operations.** Since this plan was written it gained test-mode user expiry, self-service app registration, audit exports, SCIM, `GET /users?role_id=` and `POST /users/{id}/sessions/revoke-all`.
 > - **API gaps are tracked as `[api-gaps]` issues in the API repo** (#38–#65). See [api-gaps.md](api-gaps.md) for the mapping.
 > - **The Operations section (§4–§5.1–5.3, §5.9) is web-only for now.** The specs adopted the console screens (OPS-*, SEC-01, CFG-*, RPT-01, INT-01) for the web Hub only, behind its same-origin Ops gateway. iOS skips them (PRODUCT-SPEC §2a, OPEN-QUESTIONS #27), and this app follows that.
-> - **Help and documentation live in the shared help center** at <https://compositecode.github.io/substratalapps-applications-specs/help/>. Every screen's **?** button opens its page there.
+> - **Help and documentation live in the shared help center** at <https://specs.substratalapps.com/help/>. Every screen's **?** button opens its page there.
 
 ---
 

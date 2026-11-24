@@ -1,6 +1,6 @@
 name: Help center rebuild
 
-# The help center lives in CompositeCode/substratalapps-applications-specs and is shared by every Hub app.
+# The help center lives in CompositeCode/substratal-hub-interface-specs (https://specs.substratalapps.com/help/) and is shared by every Hub app.
 # When this app's main branch changes, ask it to rebuild so the published help reflects what shipped.
 # Needs the secret SPECS_DOCS_TOKEN: a fine-grained token with Contents: read and write on the specs repo.
 on:
@@ -25,7 +25,7 @@ jobs:
             echo "::warning::SPECS_DOCS_TOKEN isn't set, so the help center will pick this up on its daily build instead."
             exit 0
           fi
-          gh api repos/CompositeCode/substratalapps-applications-specs/dispatches \
+          gh api repos/CompositeCode/substratal-hub-interface-specs/dispatches \
             -f event_type=app-docs-updated \
             -F "client_payload[app]=ios" \
             -F "client_payload[repository]=$GITHUB_REPOSITORY" \

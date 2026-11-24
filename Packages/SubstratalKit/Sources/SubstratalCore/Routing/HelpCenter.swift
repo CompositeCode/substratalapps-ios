@@ -3,7 +3,7 @@ import Foundation
 /// Links into the shared Substratal Hub help center, published with the specs site so every Hub app
 /// (web, iOS, Android, macOS, Windows, Linux) points at one documentation reference.
 public enum HelpCenter {
-    public static let base = URL(string: "https://compositecode.github.io/substratalapps-applications-specs/help/")!
+    public static let base = URL(string: "https://specs.substratalapps.com/help/")!
 
     public static var home: URL { base }
     public static var faq: URL { base.appending(path: "faq.html") }

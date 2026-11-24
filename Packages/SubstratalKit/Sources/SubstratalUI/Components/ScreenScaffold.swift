@@ -30,7 +30,7 @@ public struct ScreenPlaceholder: View {
             }
             Section {
                 Button("Open the screen spec", systemImage: "doc.text") {
-                    openURL(URL(string: "https://compositecode.github.io/substratalapps-applications-specs/spec/00-shared/SCREEN-SPECS.html#\(screen.info.anchor)")!)
+                    openURL(URL(string: "https://specs.substratalapps.com/spec/00-shared/SCREEN-SPECS.html#\(screen.info.anchor)")!)
                 }
                 Button("Help for this screen", systemImage: "questionmark.circle") { openURL(HelpCenter.url(for: screen)) }
             }

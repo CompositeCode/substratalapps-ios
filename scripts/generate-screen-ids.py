@@ -1,16 +1,31 @@
 #!/usr/bin/env python3
 """Regenerates Packages/SubstratalKit/Sources/SubstratalCore/Routing/ScreenID.swift from the shared screen index.
 
-    scripts/generate-screen-ids.py [path/to/substratal-application-specs]
+    scripts/generate-screen-ids.py [SPECS]
 
-Defaults to ../substratalapps-applications-specs/substratal-application-specs (a sibling checkout).
+SPECS is the published spec (default: https://specs.substratalapps.com/spec/), a checkout of
+CompositeCode/substratal-hub-interface-specs, or its package directory (specs/, or
+substratal-application-specs/ before spec 2.0.0). The specs repository is private; the site needs no token.
 Console (domain C) screens are skipped: they are web-only (PRODUCT-SPEC §2a, OPEN-QUESTIONS #27).
 """
-import pathlib, re, sys
+import pathlib, re, sys, urllib.request
 
 root = pathlib.Path(__file__).resolve().parent.parent
-specs = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else root.parent / "substratalapps-applications-specs" / "substratal-application-specs"
-index = (specs / "00-shared" / "SCREEN-SPECS.md").read_text(encoding="utf-8")
+specs = sys.argv[1] if len(sys.argv) > 1 else "https://specs.substratalapps.com/spec/"
+
+
+def read_spec(rel):
+    if re.match(r"https?://", specs):
+        with urllib.request.urlopen(specs.rstrip("/") + "/" + rel, timeout=30) as r:
+            return r.read().decode("utf-8")
+    base = pathlib.Path(specs)
+    for d in (base, base / "specs", base / "substratal-application-specs"):
+        if (d / "00-shared").is_dir():
+            return (d / rel).read_text(encoding="utf-8")
+    sys.exit(f"generate-screen-ids: no 00-shared/ under {specs}")
+
+
+index = read_spec("00-shared/SCREEN-SPECS.md")
 row = re.compile(r'^\| \[([A-Z]{3,4}-\d{2})\]\(#([^)]+)\) \| (.+?) \| (\S+) \| `([^`]+)` \| (\S+) \| (.+?) \|$')
 rows = [m.groups() for m in map(row.match, (l.strip() for l in index.splitlines())) if m]
 hub = [r for r in rows if r[3] != "C"]

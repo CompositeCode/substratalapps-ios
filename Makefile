@@ -1,6 +1,6 @@
 # Common tasks. Everything here also runs in CI (.github/workflows/ios.yml).
 SIM ?= iPhone 17 Pro
-SPECS ?= ../substratalapps-applications-specs/substratal-application-specs
+SPECS ?= https://specs.substratalapps.com/spec/
 XCODEBUILD = xcodebuild -project SubstratalHub.xcodeproj -scheme SubstratalHub -skipPackagePluginValidation
 
 .PHONY: project build test test-kit test-ui contract screens run-demo check
